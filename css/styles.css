@@ -300,6 +300,43 @@ footer .container .direction:hover{
   cursor: pointer;
 }
 
+/* VENTANA MODAL */
+.backdrop{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.2);
+  display: flex;
+  opacity: 0;
+  pointer-events: none;
+}
+.modal{
+  margin: auto; 
+  width: 528px;  
+  height: 581px;
+  background: #ffffff;
+  display: grid;
+  gap: 1em;
+  padding: 0.5em 1em;
+  border-radius: 6px;
+  box-shadow: 0px, 2px rgba(0, 0, 0, 0.2) 0px, 1px rgba(0, 0, 0, 0.14) 0px, 1px rgba(0, 0, 0, 0.12);
+}
+.is-hidden{
+  opacity: 1;
+  pointer-events: unset;
+}
+
+.modal .closemodal{
+  height: 18px;
+  width: 18px;
+  border: none;
+}
+.modal .closemodalimage{
+  display: flex;
+  justify-content: space-between;
+}
 
 /* CSS DE LA PÁGINA PORTAFOLIO */
 .menu-second ul{
@@ -331,10 +368,10 @@ footer .container .direction:hover{
 .menu-second ul li .buttons:hover {
   background-color: #2196f3;
   color:#FFFFFF;
-  cursor: pointer;
+  cursor: pointer;  
 }
 .portafolio{
-  max-width: 800px;
+  max-width: 1200px;
   margin: 0 auto; 
 }
 .portafolio .galery{
@@ -342,7 +379,7 @@ footer .container .direction:hover{
   flex-wrap: wrap;
   align-items: flex-start;
   justify-content: space-evenly;
-  gap: 10px;
+  gap: 20px;
 }
 .portafolio .galery  li h4{  
   padding: 10px;
@@ -355,8 +392,7 @@ footer .container .direction:hover{
 }
 .portafolio .galery li{
   list-style: none;
-  border-radius: 5px;
-  box-shadow: 5px 7px 5px -5px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;    
 }
 .social-media {
   margin-left: 70px;
@@ -364,4 +400,34 @@ footer .container .direction:hover{
 }
 .social-media h4 {
   color: white;
+}
+
+.card{
+  width: 370px;
+}
+.card-animation{
+  position: absolute;
+  top: 0;
+  width: 370px;
+  height: 294px;
+  background: rgba(33, 150, 243, 0.9);
+  padding: 63px 24px;
+  transform: translateY(105%);
+  transition: transform 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  color: #ffffff;
+}
+.card-image{
+  position: relative;
+  overflow: hidden;
+}
+.card:hover .card-animation{
+  transform: translateY(0%);  
+}
+
+.card:hover{
+  box-shadow: 5px 7px 5px -5px rgba(0, 0, 0, 0.3);
+}
+.card-body{
+  padding: 20px 24px;
 }
